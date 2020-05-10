@@ -1,3 +1,12 @@
 .card-deck {
     color:white;
+    margin-top: 300px;
+    
+}
+
+#currentCity {
+    float: right;
+    margin-right: 600px;
+    margin-bottom: 100px;
+
 }
