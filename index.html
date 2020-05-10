@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" href="Assets/CSS/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
     <title>Weather Dashboard</title>
 </head>
 
@@ -34,28 +35,74 @@
 
 
 
+
+<div class="jumbotron jumbotron-fluid mt-3 p-0 pt-3 pb-3 mb-1 border rounded bg-white">
+    <div class="container">
+        <h3 id="location" class="mt-0">Location & Date</h3>
+        <p id="temp" class="lead">Temperature:</p>
+        <p id="humidity" class="lead">Humidity:</p>
+        <p id="wind" class="lead">Wind Speed:</p>
+        <p id="UV" class="lead">UV Index:</p>
+    </div>
 </div>
 
 
-        <div class="jumbotron jumbotron-fluid mt-3 p-0 pt-3 pb-3 mb-1 border rounded bg-white">
-            <div class="container">
-                <h3 id="location" class="mt-0">Location & Date</h3>
-                <p id="temp" class="lead">Temperature:</p>
-                <p id="humidity" class="lead">Humidity:</p>
-                <p id="wind" class="lead">Wind Speed:</p>
-                <p id="UV" class="lead">UV Index:</p>
+<div class="jumbotron jumbotron-fluid mt-2 p-0 pt-3 pb-3 bg-white rounded">
+    <div class="container">
+
+        <h3 class="m-0 pb-2">5-Day Forecast:</h3>
+
+    <div class="card-deck">
+        <div class="card bg-primary">
+            <div id="dayOne" class="card-body p-2">
+            <h6 class="card-date">Date:</h6>
+            <img class = "icon">
+            <p class = "weatherTemp">Temp:</p>
+            <p class = "humidityTemp">Humidity:</p>
             </div>
         </div>
-        <div class="jumbotron jumbotron-fluid mt-2 p-0 pt-3 pb-3 bg-white rounded">
-            <div class="container">
 
-                <h3 class="m-0 pb-2">5-Day Forecast:</h3>
+        <div class="card bg-primary">
+            <div id="dayTwo" class="card-body p-2">
+            <h6 class="card-date">Date</h6>
+            <img class = "icon">
+            <p class = "weatherTemp">Temp:</p>
+            <p class = "humidityTemp">Humidity:</p>
+            </div>
+        </div>
+
+        <div class="card bg-primary">
+            <div id="dayThree" class="card-body p-2">
+            <h6 class="card-date">Date</h6>
+            <img class = "icon">
+            <p class = "weatherTemp">Temp:</p>
+            <p class = "humidityTemp">Humidity:</p>
+            </div>
+        </div>
+
+        <div class="card bg-primary">
+            <div id="dayFour" class="card-body p-2">
+            <h6 class="card-date">Date</h6>
+            <img class = "icon">
+            <p class = "weatherTemp">Temp:</p>
+            <p class = "humidityTemp">Humidity:</p>
+            </div>
+        </div>
+    
+        <div class="card bg-primary">
+            <div id="dayFive" class="card-body p-2">
+            <h6 class="card-date">Date</h6>
+            <img class = "icon">
+            <p class = "weatherTemp">Temp:</p>
+            <p class = "humidityTemp">Humidity:</p>
+            </div>
+        </div>
+    
+    </div>
 
                 
-
-                     
-            </div>            
-        </div>    
+     </div>            
+ </div>    
 
 
 
@@ -69,5 +116,6 @@
 
 
 <script src="Assets/JS/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
