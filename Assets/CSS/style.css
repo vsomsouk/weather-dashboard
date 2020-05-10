@@ -1,6 +1,6 @@
 .card-deck {
     color:white;
-    margin-top: 300px;
+    float: right;
     
 }
 
@@ -9,4 +9,10 @@
     margin-right: 600px;
     margin-bottom: 100px;
 
+}
+
+.Location {
+    margin-bottom: 100px;
+    margin-right: 100px;
+ 
 }
