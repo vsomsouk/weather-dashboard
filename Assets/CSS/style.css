@@ -1,5 +1,5 @@
 .forecastheader {
-    position: relative; left: 420px; top: -100px; bottom: 200px;
+    position: relative; left: 420px; top: -725px; 
     padding-bottom: 10px;
 }
 
@@ -8,8 +8,8 @@
     border: 2px solid black;
     width:750px;
     height: 200px;
-    position: relative; left: 420px; top: -40px; top: -100px;
-    
+    position: relative; left: 420px; top: -40px; top: -725px;
+
 }
 
 div#searchDiv {
@@ -18,9 +18,9 @@ div#searchDiv {
 
 div.cities {
     border: 1px solid black;
-    width: 300px;
-    height: 200px;
-    position: relative; bottom: -30px; right: 30px;
+    width: 400px;
+    height: 600px;
+    position: relative; bottom: -50px; right: -2px;
 
 
 }
@@ -37,7 +37,7 @@ div.cities {
     margin-top: 50px;
     margin-bottom: 50px;
     width: 650px;
-    position: relative; top: -100px;
+    position: relative; top: -690px;
     margin-left: 400px;
 }
 
