@@ -1,18 +1,47 @@
+.forecastheader {
+    position: relative; left: 420px; top: -100px; bottom: 200px;
+    padding-bottom: 10px;
+}
+
 .card-deck {
     color:white;
-    float: right;
+    border: 2px solid black;
+    width:750px;
+    height: 200px;
+    position: relative; left: 420px; top: -40px; top: -100px;
     
 }
 
+div#searchDiv {
+    position: relative; bottom: -30px; right: 30px;
+}
+
+div.cities {
+    border: 1px solid black;
+    width: 300px;
+    height: 200px;
+    position: relative; bottom: -30px; right: 30px;
+
+
+}
+
 #currentCity {
-    float: right;
-    margin-right: 600px;
-    margin-bottom: 100px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    width: 750px;
 
 }
 
 .Location {
-    margin-bottom: 100px;
-    margin-right: 100px;
- 
+    border: 2px solid black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 650px;
+    position: relative; top: -100px;
+    margin-left: 400px;
+}
+
+container {
+    border: 2px solid black;
+    width: 0, auto;
 }

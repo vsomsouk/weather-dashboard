@@ -23,4 +23,3 @@ $("searchBtn").on("click", function(event) {
     url: queryURL,
     method: "GET"
   })
- 

@@ -12,103 +12,96 @@
 
 <body>
 
-    <nav class="justify-content-center navbar text-white bg-dark">
-        <span class="navbar-brand mb-0 h1 ">Weather Dashboard</span>
-    </nav>
+<nav class="justify-content-center navbar text-white bg-dark">
+    <span class="navbar-brand mb-0 h1 ">Weather Dashboard</span>
+</nav>
     
 <div class="container">
     <div class="row-justify-content-left">
-        <div class-"col-3 bg-light pt-2">
+        <div class-"col-3 bg-light pt-2" id="searchDiv">
             <div class="span font-weight-bold mt-1 mb-2">Search for a City:</div>
-            <div class="input-group">  
+                <div class="input-group">  
                 
-                <input id="cityName" type="text" class="form-control-lg" aria-describedby="button-addon2">
-                <div class="input-group-append">
+                    <input id="cityName" type="text" class="form-control-lg" aria-describedby="button-addon2">
+                    <div class="input-group-append">
 
                     <button type="button" class="btn btn-dark" id="searchBtn">Search</button>
+                    </div>
                 </div>
-            </div>
-            </div>
-        </div>
+        
     </div>
-</div>
 
-
-
-
-<div class="Location"
+    <div class="Location"
     <div class="row" id="currentCity">
         <h3 id="location" class="mt-0">Location & Date</h3>
         <p id="temp" class="lead">Temperature:</p>
         <p id="humidity" class="lead">Humidity:</p>
         <p id="wind" class="lead">Wind Speed:</p>
         <p id="UV" class="lead">UV Index:</p>
+
     </div>
-</div>
 
+    <div class="cities"></div>
 
-<div class="jumbotron jumbotron-fluid mt-2 p-0 pt-3 pb-3 bg-white rounded">
-    <div class="container">
-
-
-
-    <div class="card-deck">
         
+    <h2 class="forecastheader">5 Day Forecast</h2>
+        <div class="card-deck" id="5daycards">
 
-        <div class="card bg-primary">
-            <div id="dayOne" class="card-body p-2">
-            <h6 class="card-date">Date:</h6>
-            <img class = "icon">
-            <p class = "weatherTemp">Temp:</p>
-            <p class = "humidityTemp">Humidity:</p>
+        
+            <div class="card bg-primary">
+                <div id="day" class="card-body p-2">
+                <h6 class="card-date">Date:</h6>
+                <img class = "icon">
+                <p class = "weatherTemp">Temp:</p>
+                <p class = "humidityTemp">Humidity:</p>
+                </div>
             </div>
-        </div>
-
-        <div class="card bg-primary">
-            <div id="dayTwo" class="card-body p-2">
-            <h6 class="card-date">Date</h6>
-            <img class = "icon">
-            <p class = "weatherTemp">Temp:</p>
-            <p class = "humidityTemp">Humidity:</p>
-            </div>
-        </div>
-
-        <div class="card bg-primary">
-            <div id="dayThree" class="card-body p-2">
-            <h6 class="card-date">Date</h6>
-            <img class = "icon">
-            <p class = "weatherTemp">Temp:</p>
-            <p class = "humidityTemp">Humidity:</p>
-            </div>
-        </div>
-
-        <div class="card bg-primary">
-            <div id="dayFour" class="card-body p-2">
-            <h6 class="card-date">Date</h6>
-            <img class = "icon">
-            <p class = "weatherTemp">Temp:</p>
-            <p class = "humidityTemp">Humidity:</p>
-            </div>
-        </div>
     
-        <div class="card bg-primary">
-            <div id="dayFive" class="card-body p-2">
-            <h6 class="card-date">Date</h6>
-            <img class = "icon">
-            <p class = "weatherTemp">Temp:</p>
-            <p class = "humidityTemp">Humidity:</p>
+            <div class="card bg-primary">
+                <div id="day" class="card-body p-2">
+                <h6 class="card-date">Date</h6>
+                <img class = "icon">
+                <p class = "weatherTemp">Temp:</p>
+                <p class = "humidityTemp">Humidity:</p>
+                </div>
+            </div>
+    
+            <div class="card bg-primary">
+                <div id="day" class="card-body p-2">
+                <h6 class="card-date">Date</h6>
+                <img class = "icon">
+                <p class = "weatherTemp">Temp:</p>
+                <p class = "humidityTemp">Humidity:</p>
+                </div>
+            </div>
+    
+            <div class="card bg-primary">
+                <div id="day" class="card-body p-2">
+                <h6 class="card-date">Date</h6>
+                <img class = "icon">
+                <p class = "weatherTemp">Temp:</p>
+                <p class = "humidityTemp">Humidity:</p>
+                </div>
+            </div>
+        
+            <div class="card bg-primary">
+                <div id="day" class="card-body p-2">
+                <h6 class="card-date">Date</h6>
+                <img class = "icon">
+                <p class = "weatherTemp">Temp:</p>
+                <p class = "humidityTemp">Humidity:</p>
+                </div>
             </div>
         </div>
-    
     </div>
 
-                
-     </div>            
- </div>    
 
 
 
 
+
+<!--This is the end tag div for the container below-->
+</div>
   
 
 
