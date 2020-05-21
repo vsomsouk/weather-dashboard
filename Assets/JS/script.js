@@ -16,8 +16,7 @@ var cityName = document.querySelector("#cityName");
 
 var apiKey = "b0687da62cb3bc7b420e13260ea2df0b";
 
-
-
+var image = 'img src=""
 
 btn.onclick = function(){
   const city = cityName.value;
@@ -30,16 +29,30 @@ btn.onclick = function(){
     $("#tempText").text(data.main.temp);
     $("#humidityText").text(data.main.humidity);
     $("#windText").text(data.wind.speed);
-    //$("#currPhoto").append(data.weather[0].icon);
+    $(".icon").html(data.weather[0].icon);
 
     //adding a date to current day and 5 day forecast.
-    let currentDate = moment().subtract(10, 'days').calendar();
+    let currentDate = moment().calendar("DD-MM-YYYY");
+    let currentAnd1 = moment().add(1, 'days').calendar("DD-MM-YYYY");
+    let currentAnd2 = moment().add(2, 'days').calendar("DD-MM-YYYY");
+    let currentAnd3 = moment().add(3, 'days').calendar("DD-MM-YYYY");
+    let currentAnd4 = moment().add(4, 'days').calendar("DD-MM-YYYY");
+    let currentAnd5 = moment().add(5, 'days').calendar("DD-MM-YYYY");
     console.log(currentDate);
 
     function displayDate () {
     $("#currentDate").text(currentDate);
+    $("#date1").text(currentAnd1);
+    $("#date2").text(currentAnd2);
+    $("#date3").text(currentAnd3);
+    $("#date4").text(currentAnd4);
+    $("#date5").text(currentAnd5);
     };
     displayDate();
+
+;
+   var new_date = moment(currentDate).add(5, "DD-MM-YYYY");
+    console.log(new_date);
 
 
 
