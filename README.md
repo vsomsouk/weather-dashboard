@@ -3,3 +3,6 @@ This week's assignment is the Weather Dashboard. As a user, we want to create a 
 
 
 https://vsomsouk.github.io/weather-dashboard/
+
+
+<img src="./Assets/Image/weatherimg.JPG">
