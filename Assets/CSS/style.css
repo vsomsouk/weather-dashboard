@@ -1,5 +1,5 @@
 .forecastheader {
-    position: relative; left: 420px; top: -725px; 
+    position: relative; left: 400px; top: -725px; 
     padding-bottom: 10px;
 }
 
@@ -7,7 +7,7 @@
     color: white;
     width: 800px;
     height: 200px;
-    position: relative; left: 420px; top: -40px; top: -725px;
+    position: relative; left: 400px; top: -40px; top: -725px;
 
 }
 
@@ -28,7 +28,7 @@ div.row {
     border: 2px solid lightgray;
     width: auto;
     margin: 1px;
-    padding: 3px;
+    padding: 8px;
 }
 
 #currentCity {
@@ -48,6 +48,5 @@ div.row {
 }
 
 container {
-    border: 2px solid black;
     width: 0, auto;
 }

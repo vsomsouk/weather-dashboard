@@ -4,19 +4,14 @@
 
 //search button
 var btn = document.querySelector("#button");
+
 //text box where you input the city name
 var cityName = document.querySelector("#cityName");
 
-//var result = document.querySelector("currentCity")
-//var locationdate = document.querySelector("locationdate");
-//var temp = document.querySelector("temp");
-//var humidity = document.querySelector("humidity");
-//var wind = document.querySelector("wind");
-//var UV = document.querySelector("UV")
+
 
 var apiKey = "b0687da62cb3bc7b420e13260ea2df0b";
 
-var image = 'img src=""
 
 btn.onclick = function(){
   const city = cityName.value;
@@ -29,7 +24,8 @@ btn.onclick = function(){
     $("#tempText").text(data.main.temp);
     $("#humidityText").text(data.main.humidity);
     $("#windText").text(data.wind.speed);
-    $(".icon").html(data.weather[0].icon);
+
+
 
     //adding a date to current day and 5 day forecast.
     let currentDate = moment().calendar("DD-MM-YYYY");
@@ -51,10 +47,6 @@ btn.onclick = function(){
     displayDate();
 
 ;
-   var new_date = moment(currentDate).add(5, "DD-MM-YYYY");
-    console.log(new_date);
-
-
 
 
     // one call API for 5 day and grabbing the UV for current 
@@ -89,6 +81,34 @@ btn.onclick = function(){
     //5-day forecast Day 5
     $("#dayFive").text(forecast.daily[5].temp.day);
     $("#humid5").text(forecast.daily[5].humidity);
+
+
+    // adding icon to 5 day foreast
+    //let iconDay1 = "http://openweathermap.org/img/w/" +  + ".png";
+
+
+    var icon1 = forecast.daily[1].weather[0].icon;
+    var iconURL1 = "http://openweathermap.org/img/w/" + icon1 + ".png";
+    $(".icon1").attr('src', iconURL1);
+
+    var icon2 = forecast.daily[2].weather[0].icon;
+    var iconURL2 = "http://openweathermap.org/img/w/" + icon2 + ".png";
+    $(".icon2").attr('src', iconURL1);
+
+    var icon3 = forecast.daily[3].weather[0].icon;
+    var iconURL3 = "http://openweathermap.org/img/w/" + icon3 + ".png";
+    $(".icon3").attr('src', iconURL1);
+
+    var icon4 = forecast.daily[4].weather[0].icon;
+    var iconURL4 = "http://openweathermap.org/img/w/" + icon4 + ".png";
+    $(".icon4").attr('src', iconURL1);
+
+    var icon5 = forecast.daily[5].weather[0].icon;
+    var iconURL5 = "http://openweathermap.org/img/w/" + icon5 + ".png";
+    $(".icon5").attr('src', iconURL1);
+
+
+
  
     //creating a list of cities
     var cityList ='<div class="row"></div>';
