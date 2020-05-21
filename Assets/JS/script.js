@@ -7,12 +7,12 @@ var btn = document.querySelector("#button");
 //text box where you input the city name
 var cityName = document.querySelector("#cityName");
 
-var result = document.querySelector("currentCity")
-var locationdate = document.querySelector("locationdate");
-var temp = document.querySelector("temp");
-var humidity = document.querySelector("humidity");
-var wind = document.querySelector("wind");
-var UV = document.querySelector("UV")
+//var result = document.querySelector("currentCity")
+//var locationdate = document.querySelector("locationdate");
+//var temp = document.querySelector("temp");
+//var humidity = document.querySelector("humidity");
+//var wind = document.querySelector("wind");
+//var UV = document.querySelector("UV")
 
 var apiKey = "b0687da62cb3bc7b420e13260ea2df0b";
 
@@ -25,27 +25,34 @@ btn.onclick = function(){
   console.log(apiURL);
   $.get(apiURL, function(data) {
     console.log(data);
-    
+    // printing the data from api on page
     $("#locationname").text(data.name);
     $("#tempText").text(data.main.temp);
     $("#humidityText").text(data.main.humidity);
     $("#windText").text(data.wind.speed);
     //$("#currPhoto").append(data.weather[0].icon);
 
-    //adding a date to current day and 5 day forecast
-    let currentTime = moment().subtract(10, 'days').calendar();
-    console.log(currentTime);
+    //adding a date to current day and 5 day forecast.
+    let currentDate = moment().subtract(10, 'days').calendar();
+    console.log(currentDate);
 
     function displayDate () {
-    $("#currentDate").text(currentTime);
+    $("#currentDate").text(currentDate);
     };
     displayDate();
-    
+
+
+
+
     // one call API for 5 day and grabbing the UV for current 
     let otherApi =  'https://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon + '&units=imperial' +'&appid=' + apiKey;
     console.log(otherApi);
     $.get(otherApi, function(forecast) {
     console.log(forecast);
+
+    //grabbing date for the 5 day forecast
+    //var s = new Date(forecast.current.dt).toLocaleDateString("en-US");
+    //console.log(s);
 
     //Pull the UV from one call API to current weather location div
     $("#uvText").text(forecast.current.uvi);
@@ -70,23 +77,20 @@ btn.onclick = function(){
     $("#dayFive").text(forecast.daily[5].temp.day);
     $("#humid5").text(forecast.daily[5].humidity);
  
+    //creating a list of cities
+    var cityList ='<div class="row"></div>';
+    $(".cities").append(cityList);
+    $(".row").text(city);
+
+    })
 
     //save in local storage
 
 
-    //localStorage.setItem("cities", JSON.stringify(data));
+    //localStorage.setItem("cities",JSON.stringify(data));
 
-    
-    
-    })
   });
-//   fetch(apiURL).then(response => {
-//   response.json().then(json => {
-//     let data = json;
-//     console.log (data);
-//     $("#tempText").text(data.main.temp);
-//   });
-//  });
 }
+
 
 
