@@ -36,10 +36,10 @@
 
     <div class="Location"
     <div class="row" id="currentCity">
-        <h3 id="locationdate" class="mt-0">Location <span id="locationname"></span></h3>
-        <p id="temp" class="lead">Temperature: <span id="tempText"></span></p>
-        <p id="humidity" class="lead">Humidity: <span id="humidityText">%</span></p>
-        <p id="wind" class="lead">Wind Speed: <span id="windText"></span>MPH</p>
+        <h3 id="locationdate" class="mt-0">Location: <span id="locationname"></span> Date (<span id="currentDate"></span>)<img id = "currPhoto" src=""></h3>
+        <p id="temp" class="lead">Temperature: <span id="tempText"></span> °F</p>
+        <p id="humidity" class="lead">Humidity: <span id="humidityText"></span>%</p>
+        <p id="wind" class="lead">Wind Speed: <span id="windText"></span> MPH</p>
         <p id="UV" class="lead">UV Index: <span id="uvText"></span></p>
 
     </div>
@@ -52,46 +52,46 @@
         
             <div class="card bg-primary">
                 <div id="day" class="card-body p-2">
-                <h6 class="card-date">Date:</h6>
+                <h6 class="card-date">Date: </h6>
                 <img class = "icon">
-                <p class = "weatherTemp">Temp:</p>
-                <p class = "humidityTemp">Humidity:</p>
+                <p class = "weatherTemp">Temp: <span id="dayOne"></span> °F</p>
+                <p class = "humidityTemp">Humidity: <span id="humid1"></span>%</p>
                 </div>
             </div>
     
             <div class="card bg-primary">
-                <div id="day" class="card-body p-2">
+                <div id="day2" class="card-body p-2">
                 <h6 class="card-date">Date</h6>
                 <img class = "icon">
-                <p class = "weatherTemp">Temp:</p>
-                <p class = "humidityTemp">Humidity:</p>
+                <p class = "weatherTemp">Temp: <span id="dayTwo"></span> °F</p>
+                <p class = "humidityTemp">Humidity: <span id="humid2"></span>%</p>
                 </div>
             </div>
     
             <div class="card bg-primary">
-                <div id="day" class="card-body p-2">
+                <div id="day3" class="card-body p-2">
                 <h6 class="card-date">Date</h6>
                 <img class = "icon">
-                <p class = "weatherTemp">Temp:</p>
-                <p class = "humidityTemp">Humidity:</p>
+                <p class = "weatherTemp">Temp: <span id="dayThree"></span> °F</p>
+                <p class = "humidityTemp">Humidity: <span id="humid3"></span>%</p>
                 </div>
             </div>
     
             <div class="card bg-primary">
-                <div id="day" class="card-body p-2">
+                <div id="day4" class="card-body p-2">
                 <h6 class="card-date">Date</h6>
                 <img class = "icon">
-                <p class = "weatherTemp">Temp:</p>
-                <p class = "humidityTemp">Humidity:</p>
+                <p class = "weatherTemp">Temp: <span id="dayFour"></span> °F</p>
+                <p class = "humidityTemp">Humidity: <span id="humid4"></span>%</p>
                 </div>
             </div>
         
             <div class="card bg-primary">
-                <div id="day" class="card-body p-2">
+                <div id="day5" class="card-body p-2">
                 <h6 class="card-date">Date</h6>
                 <img class = "icon">
-                <p class = "weatherTemp">Temp:</p>
-                <p class = "humidityTemp">Humidity:</p>
+                <p class = "weatherTemp">Temp: <span id="dayFive"></span> °F</p>
+                <p class = "humidityTemp">Humidity: <span id="humid5"></span>%</p>
                 </div>
             </div>
         </div>
@@ -105,6 +105,7 @@
 
 
 <script src="Assets/JS/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>!-->
 </body>
