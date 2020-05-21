@@ -1,14 +1,8 @@
-//var url = "https://api.openweathermap.org/data/2.5/forecast?q=";
-//var currenturl = "https://api.openweathermap.org/data/2.5/weather?q=";
-
-
 //search button
 var btn = document.querySelector("#button");
 
 //text box where you input the city name
 var cityName = document.querySelector("#cityName");
-
-
 
 var apiKey = "b0687da62cb3bc7b420e13260ea2df0b";
 
@@ -26,7 +20,6 @@ btn.onclick = function(){
     $("#windText").text(data.wind.speed);
 
 
-
     //adding a date to current day and 5 day forecast.
     let currentDate = moment().calendar("DD-MM-YYYY");
     let currentAnd1 = moment().add(1, 'days').calendar("DD-MM-YYYY");
@@ -35,6 +28,7 @@ btn.onclick = function(){
     let currentAnd4 = moment().add(4, 'days').calendar("DD-MM-YYYY");
     let currentAnd5 = moment().add(5, 'days').calendar("DD-MM-YYYY");
     console.log(currentDate);
+
 
     function displayDate () {
     $("#currentDate").text(currentDate);
@@ -46,8 +40,6 @@ btn.onclick = function(){
     };
     displayDate();
 
-;
-
 
     // one call API for 5 day and grabbing the UV for current 
     let otherApi =  'https://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon + '&units=imperial' +'&appid=' + apiKey;
@@ -55,9 +47,6 @@ btn.onclick = function(){
     $.get(otherApi, function(forecast) {
     console.log(forecast);
 
-    //grabbing date for the 5 day forecast
-    //var s = new Date(forecast.current.dt).toLocaleDateString("en-US");
-    //console.log(s);
 
     //Pull the UV from one call API to current weather location div
     $("#uvText").text(forecast.current.uvi);
@@ -84,9 +73,7 @@ btn.onclick = function(){
 
 
     // adding icon to 5 day foreast
-    //let iconDay1 = "http://openweathermap.org/img/w/" +  + ".png";
-
-
+   
     var icon1 = forecast.daily[1].weather[0].icon;
     var iconURL1 = "http://openweathermap.org/img/w/" + icon1 + ".png";
     $(".icon1").attr('src', iconURL1);
@@ -107,19 +94,18 @@ btn.onclick = function(){
     var iconURL5 = "http://openweathermap.org/img/w/" + icon5 + ".png";
     $(".icon5").attr('src', iconURL1);
 
-
-
  
     //creating a list of cities
     var cityList ='<div class="row"></div>';
     $(".cities").append(cityList);
+
+    // this keeps duplicating the the city name when a new row gets appended. 
+    //How do I prevent this?
     $(".row").text(city);
 
     })
 
     //save in local storage
-
-
     //localStorage.setItem("cities",JSON.stringify(data));
 
   });
