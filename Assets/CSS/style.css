@@ -24,7 +24,7 @@ div.cities {
 
 }
 
-div.row {
+ul.c {
     border: 2px solid lightgray;
     width: auto;
     margin: 1px;
