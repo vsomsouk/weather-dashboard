@@ -16,6 +16,9 @@ for(var i = 0; i < cities.length; i++){
   $(".cities").append("<ul class='c'>" + cities[i] + "</ul>")
 }
 
+
+
+
 //when I click the search button...
 btn.onclick = function () {
   const city = cityName.value;
@@ -111,33 +114,13 @@ btn.onclick = function () {
   });
 }
 
+// click previous searched city and load data.
+$(".c").click(function(event){
+  console.log("hello")
+});
 
 
 
 
-// const STORAGE_CITY = 'STORAGE_CITY';
 
-// var valueToStore = {
-//   myArr: ['Hello, how are you?', 'dog', 'iguana']
-// }
 
-// console.log(valueToStore)
-// console.log(valueToStore.toString())
-// console.log(JSON.stringify(valueToStore))
-// console.log(JSON.parse(JSON.stringify(valueToStore)))
-// console.log(JSON.stringify(valueToStore)[1])
-
-// var stringy = JSON.stringify(valueToStore)
-
-// localStorage.setItem(STORAGE_CITY, stringy)
-
-// var value = localStorage.getItem(STORAGE_CITY)
-
-// console.log(typeof value)
-// console.log(value)
-// console.log(value.myArr)
-
-// var parsed = JSON.parse(value)
-// console.log(typeof parsed)
-// console.log(parsed)
-// console.log(parsed.myArr[1])
