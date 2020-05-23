@@ -1,5 +1,5 @@
 //search button
-var btn = document.querySelector("#button");
+//var btn = document.querySelector("#button");
 
 //text box where you input the city name
 var cityName = document.querySelector("#cityName");
@@ -17,10 +17,9 @@ for(var i = 0; i < cities.length; i++){
 }
 
 
-
-
 //when I click the search button...
-btn.onclick = function () {
+$("#button").click(function() {
+//btn.onclick = function () {
   const city = cityName.value;
   var apiURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial' + '&appid=' + apiKey;
   console.log(apiURL);
@@ -102,22 +101,23 @@ btn.onclick = function () {
       cities.push(city)
       
       localStorage.setItem(CITY, JSON.stringify(cities));
-      //Clicking the saved cities and it will show the weather
-
-
-
-
+  
     })
-
-    
-
   });
-}
-
-// click previous searched city and load data.
-$(".c").click(function(event){
-  console.log("hello")
 });
+
+// click previous searched city and load data. 
+// If I use trigger to call the original button function into ".c", data duplicates and API errors
+// If I use immediate propgation, how can block the first click function 
+// $(".c").click(function(event){
+// event.stopImmediatePropagation()
+// $("button").trigger("click")
+
+// });
+
+
+  
+
 
 
 
