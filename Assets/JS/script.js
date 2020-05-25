@@ -1,6 +1,3 @@
-//search button
-//var btn = document.querySelector("#button");
-
 //text box where you input the city name
 var cityName = document.querySelector("#cityName");
 var apiKey = "b0687da62cb3bc7b420e13260ea2df0b";
@@ -16,11 +13,7 @@ for(var i = 0; i < cities.length; i++){
   $(".cities").append("<ul class='c'>" + cities[i] + "</ul>")
 }
 
-
-//when I click the search button...
-$("#button").click(function() {
-//btn.onclick = function () {
-  const city = cityName.value;
+function searchCity(city, successCallbackFunction) {
   var apiURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial' + '&appid=' + apiKey;
   console.log(apiURL);
   $.get(apiURL, function (data) {
@@ -54,8 +47,6 @@ $("#button").click(function() {
     let otherApi = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon + '&units=imperial' + '&appid=' + apiKey;
     console.log(otherApi);
     $.get(otherApi, function (forecast) {
-      console.log(forecast);
-
       //pull the UV from one call API to current weather location div
       $("#uvText").text(forecast.current.uvi);
 
@@ -96,24 +87,40 @@ $("#button").click(function() {
       var iconURL5 = "https://openweathermap.org/img/w/" + icon5 + ".png";
       $(".icon5").attr('src', iconURL5);
 
-      //creating a list of cities
-      $(".cities").append("<ul class='c'>" + city + "</ul>");
-      cities.push(city)
-      
-      localStorage.setItem(CITY, JSON.stringify(cities));
-  
+      successCallbackFunction();
     });
   });
+};
+
+//when I click the search button...
+$("#button").click(function() {
+
+      // function that will be called when searchCity() is complete
+      function successCallbackFunction() {
+        //creating a list of cities
+        $(".cities").append("<ul class='c'>" + city + "</ul>")
+        $('.c').click(clickCity)
+        cities.push(city)
+        
+        localStorage.setItem(CITY, JSON.stringify(cities));
+      }
+
+      searchCity(cityName.value, successCallbackFunction)
 });
 
-// click previous searched city and load data. 
-// If I use trigger to call the original button function into ".c", data duplicates and API errors
-// If I use immediate propgation, how can block the first click function 
-// $(".c").click(function(event){
-// event.stopImmediatePropagation()
-// $("button").trigger("click")
+$('.c').click(clickCity)
 
-// });
+function clickCity(event) {
+  // get name of city to search from click event
+  const city = event.currentTarget.innerHTML
+
+  // call searchCity but don't do anything after searching
+  function successCallbackFunction() {
+
+  }
+  searchCity(city, successCallbackFunction);
+}
+
 
 
   
