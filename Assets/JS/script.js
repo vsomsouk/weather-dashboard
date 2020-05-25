@@ -21,7 +21,7 @@ for(var i = 0; i < cities.length; i++){
 $("#button").click(function() {
 //btn.onclick = function () {
   const city = cityName.value;
-  var apiURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial' + '&appid=' + apiKey;
+  var apiURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial' + '&appid=' + apiKey;
   console.log(apiURL);
   $.get(apiURL, function (data) {
     console.log(data);
@@ -65,35 +65,35 @@ $("#button").click(function() {
       $("#dayOne").text(forecast.daily[1].temp.day);
       $("#humid1").text(forecast.daily[1].humidity);
       var icon1 = forecast.daily[1].weather[0].icon;
-      var iconURL1 = "http://openweathermap.org/img/w/" + icon1 + ".png";
+      var iconURL1 = "https://openweathermap.org/img/w/" + icon1 + ".png";
       $(".icon1").attr('src', iconURL1);
 
       //5-day forecast Day 2
       $("#dayTwo").text(forecast.daily[2].temp.day);
       $("#humid2").text(forecast.daily[2].humidity);
       var icon2 = forecast.daily[2].weather[0].icon;
-      var iconURL2 = "http://openweathermap.org/img/w/" + icon2 + ".png";
+      var iconURL2 = "https://openweathermap.org/img/w/" + icon2 + ".png";
       $(".icon2").attr('src', iconURL2);
 
       //5-day forecast Day 3
       $("#dayThree").text(forecast.daily[3].temp.day);
       $("#humid3").text(forecast.daily[3].humidity);
       var icon3 = forecast.daily[3].weather[0].icon;
-      var iconURL3 = "http://openweathermap.org/img/w/" + icon3 + ".png";
+      var iconURL3 = "https://openweathermap.org/img/w/" + icon3 + ".png";
       $(".icon3").attr('src', iconURL3);
 
       //5-day forecast Day 4
       $("#dayFour").text(forecast.daily[4].temp.day);
       $("#humid4").text(forecast.daily[4].humidity);
       var icon4 = forecast.daily[4].weather[0].icon;
-      var iconURL4 = "http://openweathermap.org/img/w/" + icon4 + ".png";
+      var iconURL4 = "https://openweathermap.org/img/w/" + icon4 + ".png";
       $(".icon4").attr('src', iconURL4);
 
       //5-day forecast Day 5
       $("#dayFive").text(forecast.daily[5].temp.day);
       $("#humid5").text(forecast.daily[5].humidity);
       var icon5 = forecast.daily[5].weather[0].icon;
-      var iconURL5 = "http://openweathermap.org/img/w/" + icon5 + ".png";
+      var iconURL5 = "https://openweathermap.org/img/w/" + icon5 + ".png";
       $(".icon5").attr('src', iconURL5);
 
       //creating a list of cities
@@ -102,7 +102,7 @@ $("#button").click(function() {
       
       localStorage.setItem(CITY, JSON.stringify(cities));
   
-    })
+    });
   });
 });
 
